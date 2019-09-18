@@ -32,58 +32,39 @@
 * Git client - latest
 
 
-## Solidity function: addPet(struct), transfer(ERC20_token)
+## Solidity contract: PETS struct & function
 ```solidity
-/* 동물등록 */
-function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
-    pets.push(myStruct(_petage, _breed, _gender, _location, block.timestamp));
-    emit pet(_petage, _breed, _gender, _location, block.timestamp);
-  }
-```
+pragma solidity ^0.5.1;
 
-```solidity
-/* 용품거래 */
-function transfer(address to, uint256 value) public returns (bool) {
-    _transfer(msg.sender, to, value);
-    return true;
-  }
-```
-
-## Web3.js: Metamask connect & transfer(Ether)
-```javascript
-/* 메타마스크 연동 */
-window.addEventListener('load', function() {
-    // Load WEB3
-    // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
-    if(typeof web3 !== 'undefined') {
-        web3 = new Web3(web3.currentProvider);
-        //console.log("metaAddress")
-    // Or connect to a node
-    }
-    // Check the connection
-    if(!web3.isConnected()) {
-        console.error("Not connected");
-    }
-   
-/* 이더전송 */
-    var accounts = ethereum.enable()
-    .then( function(account) {
-        //console.log(account);
-        var accountInterval = setInterval(async function() {
-            if (web3.eth.accounts[0] !== account) {
-                account = web3.eth.accounts[0];
-                console.log(account);
-                document.getElementById("address").value = account;
-                web3.eth.getBalance(account, function(err, result) {
-                    balance = web3.fromWei(result, 'ether');
-                    console.log(balance);
-                    document.getElementById("balance").value = balance;
-                })
-            }
-        }, 100);
-    });
+contract PETS {
+    uint8 numberOfAnimals; // 총
     
-});
+    struct myStruct {
+        string petage;
+        string breed;
+        string gender;
+        string location;
+        uint timestamp;
+    }
+    
+    event pet (
+        string petage;
+        string breed;
+        string gender;
+        string location;
+        uint timestamp;
+    );
+        
+    myStruct[] public pets;
+    
+    /* 사용자가 입력한 동물을 등록 */
+    function addPet (string memory _email, string memory _name, string memory _race, string memory _gender, uint _age, string memory _location) public {
+        pets.push(myStruct(_email, _name, _race, _gender, _age, _location, block.timestamp));
+        numberOfAnimals++;
+        emit pet(_email, _name, _race, _gender, _age, _location, block.timestamp);
+    }
+    
+}
 ```
 <br>
 
