@@ -49,7 +49,7 @@ function transfer(address to, uint256 value) public returns (bool) {
   }
 ```
 
-## Web3.js: Metamask Connect & transfer(Ether)
+## Web3.js: Metamask connect & transfer(Ether)
 ```javascript
 /* 메타마스크 연동 */
 window.addEventListener('load', function() {
@@ -82,6 +82,7 @@ window.addEventListener('load', function() {
             }
         }, 100);
     });
+    
 });
 ```
 <br>
