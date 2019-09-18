@@ -126,3 +126,8 @@ http://101.101.166.164:8080/
 ![image](https://user-images.githubusercontent.com/51254582/64400033-a5b82200-d0a5-11e9-9d4e-2f69580ea2e4.png)
 
 ![image](https://user-images.githubusercontent.com/51254582/64400037-a9e43f80-d0a5-11e9-8d6d-2dbbab7728a8.png)
+
+
+## References
+* Express - http://www.blueb.co.kr/?c=2/31&uid=4138
+* Socket.io - https://codevkr.tistory.com/58?category=719250
