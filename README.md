@@ -32,7 +32,7 @@
 * Git client - latest
 
 
-## Solidity contract: PETS struct & function
+## Solidity: SmartContract
 ```solidity
 pragma solidity ^0.5.1;
 
