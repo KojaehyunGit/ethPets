@@ -50,7 +50,7 @@ function transfer(address to, uint256 value) public returns (bool) {
 ```
 
 
-## Javascript function: Metamask Connect(wallet)
+## Web3.js: Metamask Connect
 ```javascript
 window.addEventListener('load', function() {
   // Load WEB3
