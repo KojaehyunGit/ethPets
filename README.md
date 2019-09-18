@@ -32,7 +32,7 @@
 * Git client - latest
 
 
-## Solidity function: addPet, transfer(token)
+## Solidity function: addPet(struct), transfer(token)
 ```solidity
 /* 동물등록 */
 function addPet(uint256 petage, string  value) public returns (bool) {
@@ -55,7 +55,7 @@ function transfer(address to, uint256 value) public returns (bool) {
 ```
 
 
-## Javascript function: Metamask Connect
+## Javascript function: Metamask Connect(wallet)
 ```javascript
     window.addEventListener('load', function() {
     // Load WEB3
@@ -74,13 +74,13 @@ function transfer(address to, uint256 value) public returns (bool) {
     .then( function(account) {
         //console.log(account);
         var accountInterval = setInterval(function() {
-        if (web3.eth.accounts[0] !== account) {
-            account = web3.eth.accounts[0];
-            document.getElementById("address").value = account;
-            }
-        }, 100);
-    });    
-});
+            if (web3.eth.accounts[0] !== account) {
+                account = web3.eth.accounts[0];
+                document.getElementById("address").value = account;
+                }
+            }, 100);
+        });    
+    });
 ```
 <br>
 
@@ -98,7 +98,7 @@ npm install
 
 ### 3. 서버를 실행합니다.
 ```
-ndoe startFabric.sh
+node startFabric.sh
 ```
 
 ### 4. 브라우저에서 해당 포트로 접속합니다.
@@ -131,7 +131,3 @@ http://101.101.166.164:8080/
 ![image](https://user-images.githubusercontent.com/51254582/64400033-a5b82200-d0a5-11e9-9d4e-2f69580ea2e4.png)
 
 ![image](https://user-images.githubusercontent.com/51254582/64400037-a9e43f80-d0a5-11e9-8d6d-2dbbab7728a8.png)
-
-![image](https://user-images.githubusercontent.com/51254582/64400043-afda2080-d0a5-11e9-84fa-fc0b43f700be.png)
-
-![image](https://user-images.githubusercontent.com/51254582/64400049-b4063e00-d0a5-11e9-8bf2-850f228a0de7.png)
