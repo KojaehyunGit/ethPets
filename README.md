@@ -32,7 +32,7 @@
 * Git client - latest
 
 
-## Solidity function: addPet(struct), transfer(token)
+## Solidity function: addPet(struct), transfer(ERC20_token)
 ```solidity
 /* 동물등록 */
 function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
@@ -42,40 +42,47 @@ function addPet (uint256 _petage, string memory _breed, string memory _gender, s
 ```
 
 ```solidity
-/* 기부하기 */
+/* 용품거래 */
 function transfer(address to, uint256 value) public returns (bool) {
     _transfer(msg.sender, to, value);
     return true;
   }
 ```
 
-
-## Web3.js: Metamask Connect
+## Web3.js: Metamask Connect & transfer(Ether)
 ```javascript
+/* 메타마스크 연동 */
 window.addEventListener('load', function() {
-  // Load WEB3
-  // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
-  if(typeof web3 !== 'undefined') {
-      web3 = new Web3(web3.currentProvider);
-      //console.log("metaAddress")
-  // Or connect to a node
-  }
-  // Check the connection
-  if(!web3.isConnected()) {
-      console.error("Not connected");
-  }
-  
-  var accounts = ethereum.enable()
-  .then( function(account) {
-      //console.log(account);
-      var accountInterval = setInterval(function() {
-          if (web3.eth.accounts[0] !== account) {
-              account = web3.eth.accounts[0];
-              document.getElementById("address").value = account;
-              }
-          }, 100);
-      });    
-  });
+    // Load WEB3
+    // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
+    if(typeof web3 !== 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+        //console.log("metaAddress")
+    // Or connect to a node
+    }
+    // Check the connection
+    if(!web3.isConnected()) {
+        console.error("Not connected");
+    }
+   
+/* 이더전송 */
+    var accounts = ethereum.enable()
+    .then( function(account) {
+        //console.log(account);
+        var accountInterval = setInterval(async function() {
+            if (web3.eth.accounts[0] !== account) {
+                account = web3.eth.accounts[0];
+                console.log(account);
+                document.getElementById("address").value = account;
+                web3.eth.getBalance(account, function(err, result) {
+                    balance = web3.fromWei(result, 'ether');
+                    console.log(balance);
+                    document.getElementById("balance").value = balance;
+                })
+            }
+        }, 100);
+    });
+});
 ```
 <br>
 
