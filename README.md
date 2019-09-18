@@ -35,10 +35,10 @@
 ## Solidity function: addPet(struct), transfer(token)
 ```solidity
 /* 동물등록 */
-  function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
-        pets.push(myStruct(_petage, _breed, _gender, _location, block.timestamp));
-        emit pet(_petage, _breed, _gender, _location, block.timestamp);
-    }
+function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
+    pets.push(myStruct(_petage, _breed, _gender, _location, block.timestamp));
+    emit pet(_petage, _breed, _gender, _location, block.timestamp);
+  }
 ```
 
 ```solidity
@@ -52,30 +52,30 @@ function transfer(address to, uint256 value) public returns (bool) {
 
 ## Javascript function: Metamask Connect(wallet)
 ```javascript
-    window.addEventListener('load', function() {
-    // Load WEB3
-    // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
-    if(typeof web3 !== 'undefined') {
-        web3 = new Web3(web3.currentProvider);
-        //console.log("metaAddress")
-    // Or connect to a node
-    }
-    // Check the connection
-    if(!web3.isConnected()) {
-        console.error("Not connected");
-    }
-    
-    var accounts = ethereum.enable()
-    .then( function(account) {
-        //console.log(account);
-        var accountInterval = setInterval(function() {
-            if (web3.eth.accounts[0] !== account) {
-                account = web3.eth.accounts[0];
-                document.getElementById("address").value = account;
-                }
-            }, 100);
-        });    
-    });
+window.addEventListener('load', function() {
+  // Load WEB3
+  // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
+  if(typeof web3 !== 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+      //console.log("metaAddress")
+  // Or connect to a node
+  }
+  // Check the connection
+  if(!web3.isConnected()) {
+      console.error("Not connected");
+  }
+  
+  var accounts = ethereum.enable()
+  .then( function(account) {
+      //console.log(account);
+      var accountInterval = setInterval(function() {
+          if (web3.eth.accounts[0] !== account) {
+              account = web3.eth.accounts[0];
+              document.getElementById("address").value = account;
+              }
+          }, 100);
+      });    
+  });
 ```
 <br>
 
@@ -93,7 +93,7 @@ npm install
 
 ### 3. 서버를 실행합니다.
 ```
-node startFabric.sh
+node server.js
 ```
 
 ### 4. 브라우저에서 해당 포트로 접속합니다.
