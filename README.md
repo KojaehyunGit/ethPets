@@ -32,13 +32,12 @@
 * Git client - latest
 
 
-## Solidity: SmartContract
+## SmartContract: Solidity
 ```solidity
 pragma solidity ^0.5.1;
 
 contract PETS {
-    uint8 numberOfAnimals; // 총
-    
+
     struct myStruct {
         string petage;
         string breed;
