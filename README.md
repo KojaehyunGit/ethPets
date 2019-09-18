@@ -57,10 +57,9 @@ contract PETS {
     myStruct[] public pets;
     
     /* 사용자가 입력한 동물을 등록 */
-    function addPet (string memory _email, string memory _name, string memory _race, string memory _gender, uint _age, string memory _location) public {
-        pets.push(myStruct(_email, _name, _race, _gender, _age, _location, block.timestamp));
-        numberOfAnimals++;
-        emit pet(_email, _name, _race, _gender, _age, _location, block.timestamp);
+    function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
+        pets.push(myStruct(_petage, _breed, _gender, _location, block.timestamp));
+        emit pet(_petage, _breed, _gender, _location, block.timestamp);
     }
     
 }
