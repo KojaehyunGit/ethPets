@@ -1,8 +1,114 @@
-![image](https://user-images.githubusercontent.com/51254582/64399911-30e4e800-d0a5-11e9-9657-03d3492a30c1.png)
+# PETS
+* **이더리움 기반 펫 용품 거래 및 소통, 기부모금 웹페이지**
+* 동물과 소셜네트워크서비스를 결합한 단어(PET + SNS)
 
-![image](https://user-images.githubusercontent.com/51254582/64399926-42c68b00-d0a5-11e9-8273-85d503cf5605.png)
 
-![image](https://user-images.githubusercontent.com/51254582/64399914-34786f00-d0a5-11e9-9f9b-bd46b1add649.png)
+## Team
+* 권달형
+* 고재현
+* 김민선
+* 김희재
+* 문영선
+
+
+## Background
+> 1인 가구, 저출산·고령화 현상으로 매년 반려동물을 키우는 가구수가 늘어나면서 <br>
+관련시장 규모가 엄청나게 커지고 있습니다. 최근에는 반려동물을 뜻하는 '펫(Pet)'과 <br>
+가족을 의미하는 '패밀리(Family)'가 합쳐진 '펫팸족', 반려동물 관련시장 성장세를 반영한 <br>
+'펫코노미(Pet+Economy)'라는 신조어까지 등장할 정도로 반려동물에 대한 관심도가 높아지고 있는 추세입니다. <br>
+저희팀은 이러한 반려동물이라는 공감대를 이더리움 기반의 블록체인 시스템과 결합하여, <br>
+참여할수록 보상받는 인센티브 생테계 시스템 형식의 DAPP으로 구현 하려고 합니다.
+
+
+## Prerequisites
+* Ubuntu - 16.04
+* Solidity - ^0.5.1
+* Node js - latest
+* Express - latest
+* Javascript
+* Web3
+* mongoDB - latest
+* Socket.io - latest
+* Git client - latest
+
+
+## Solidity function: addPet, transfer(token)
+```solidity
+/* 동물등록 */
+function addPet(uint256 petage, string  value) public returns (bool) {
+    _transfer(msg.sender, to, value);
+    return true;
+  }
+  
+  function addPet (uint256 _petage, string memory _breed, string memory _gender, string memory _location) public {
+        pets.push(myStruct(_petage, _breed, _gender, _location, block.timestamp));
+        emit pet(_petage, _breed, _gender, _location, block.timestamp);
+    }
+```
+
+```solidity
+/* 기부하기 */
+function transfer(address to, uint256 value) public returns (bool) {
+    _transfer(msg.sender, to, value);
+    return true;
+  }
+```
+
+
+## Javascript function: Metamask Connect
+```javascript
+    window.addEventListener('load', function() {
+    // Load WEB3
+    // Check wether it's already injected by something else (like Metamask or Parity Chrome plugin)
+    if(typeof web3 !== 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+        //console.log("metaAddress")
+    // Or connect to a node
+    }
+    // Check the connection
+    if(!web3.isConnected()) {
+        console.error("Not connected");
+    }
+    
+    var accounts = ethereum.enable()
+    .then( function(account) {
+        //console.log(account);
+        var accountInterval = setInterval(function() {
+        if (web3.eth.accounts[0] !== account) {
+            account = web3.eth.accounts[0];
+            document.getElementById("address").value = account;
+            }
+        }, 100);
+    });    
+});
+```
+<br>
+
+
+## Installing
+### 1. 파일을 클론합니다.
+```
+git clone https://github.com/KojaehyunGit/ethPets.git
+```
+
+### 2. 필요한 NPM을 설치합니다.
+```
+npm install
+```
+
+### 3. 서버를 실행합니다.
+```
+ndoe startFabric.sh
+```
+
+### 4. 브라우저에서 해당 포트로 접속합니다.
+```
+http://101.101.166.164:8080/
+```
+<br>
+
+
+## Application Scenario
 
 ![image](https://user-images.githubusercontent.com/51254582/64399945-4d812000-d0a5-11e9-8d65-247ab00085bb.png)
 
@@ -29,7 +135,3 @@
 ![image](https://user-images.githubusercontent.com/51254582/64400043-afda2080-d0a5-11e9-84fa-fc0b43f700be.png)
 
 ![image](https://user-images.githubusercontent.com/51254582/64400049-b4063e00-d0a5-11e9-8bf2-850f228a0de7.png)
-
-
-
-
