@@ -73,19 +73,29 @@ contract PETS {
 git clone https://github.com/KojaehyunGit/ethPets.git
 ```
 
-### 2. 필요한 NPM을 설치합니다.
+### 2. MongoDB를 설치합니다.
+```
+sudo apt-get install -y mongodb-org
+```
+
+### 3. MongoDB를 시작합니다.
+```
+sudo service mongod start
+```
+
+### 4. 필요한 NPM을 설치합니다.
 ```
 npm install
 ```
 
-### 3. 서버를 실행합니다.
+### 5. 서버를 실행합니다.
 ```
 node server.js
 ```
 
-### 4. 브라우저에서 해당 포트로 접속합니다.
+### 6. 브라우저에서 해당 포트로 접속합니다.
 ```
-http://101.101.166.164:8080/
+http://127.0.0.1:8080/
 ```
 <br>
 
