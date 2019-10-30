@@ -1,5 +1,5 @@
 {
-  "name": "node-authentication",
+  "name": "jhko",
   "main": "server.js",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -24,5 +24,13 @@
     "request": "^2.88.0",
     "socket.io": "^2.1.1",
     "web3": "^1.2.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "1.0.0",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

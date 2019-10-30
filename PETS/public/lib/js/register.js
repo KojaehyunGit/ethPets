@@ -1,6 +1,6 @@
 typeof web3 !== 'undefined'
   ? (web3 = new Web3(web3.currentProvider))
-  : (web3 = new Web3(new Web3.providers.HttpProvider('http://101.101.166.164:8545')));
+  : (web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545')));
 
 
 /* 이더리움 테스트넷 노드 rpc (infura) 

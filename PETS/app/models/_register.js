@@ -1,8 +1,8 @@
 // Truffle에서 트랜잭션 쏘는 방법
 
 typeof web3 !== 'undefined'
-//  ? (web3 = new Web3(web3.currentProvider))
- : (web3 = new Web3(new Web3.providers.HttpProvider('http://101.101.166.164:8545')));
+? (web3 = new Web3(web3.currentProvider))
+// : (web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545')));
 
 const Web3 = require('web3');
 const web3 = new Web3('');
