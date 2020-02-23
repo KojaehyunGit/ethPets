@@ -17,7 +17,7 @@
 가족을 의미하는 '패밀리(Family)'가 합쳐진 '**펫팸족**', 반려동물 관련시장 성장세를 반영한 <br>
 '**펫코노미**(Pet+Economy)'라는 신조어까지 등장할 정도로 반려동물에 대한 관심도가 높아지고 있는 추세입니다. <br><br>
 저희팀은 이러한 반려동물이라는 공감대를 **이더리움 기반**의 **블록체인 시스템**과 결합하여, <br>
-참여할수록 보상받는 **인센티브 생테계 시스템** 형식의 **DWeb**으로 구현 하려고 합니다.
+참여할수록 보상받는 **인센티브 생테계 시스템** 형식의 **DApp**으로 구현 하려고 합니다.
 
 
 ## Prerequisites
@@ -73,43 +73,17 @@ contract PETS {
 git clone https://github.com/KojaehyunGit/ethPets.git
 ```
 
-### 2. nodejs를 설치합니다.
-```
-sudo apt-get install nodejs
-```
-
-### 3. 현재 node 는 nodejs 입니다. 이전 명령을 사용하려면 이와 같은 기호 링크를 작성해야합니다.
-```
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-```
-
-### 4. NodejsPackageManager를 설치합니다.
-```
-sudo apt-get install npm
-
-npm init
-```
-
-### 5. 필요한 모듈을 설치합니다.
+### 2. 필요한 모듈을 설치합니다.
 ```
 npm install
 ```
 
-### 6. MongoDB를 설치한 후 실행합니다.
-```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-
-sudo apt-get install -y mongodb-org
-
-sudo service mongod start
-```
-
-### 7. 서버를 실행시킵니다.
+### 3. 서버를 실행시킵니다.
 ```
 node server.js
 ```
 
-### 8. 브라우저에서 해당 포트로 접속합니다.
+### 4. 브라우저에서 해당 포트로 접속합니다.
 ```
 http://127.0.0.1:8080/
 ```
